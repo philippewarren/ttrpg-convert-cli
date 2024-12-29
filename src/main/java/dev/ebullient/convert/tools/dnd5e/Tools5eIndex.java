@@ -396,13 +396,13 @@ public class Tools5eIndex implements JsonSource, ToolsIndex {
         // Add missing/frequently-used aliases
         TtrpgConfig.addDefaultAliases(aliases);
 
-        // Find subrace variants (add to index)
-        findRaceVariants();
-
         // Properly import homebrew sources
         for (HomebrewMetaTypes homebrew : homebrewMetaTypes.values()) {
             importHomebrewTree(homebrew);
         }
+
+        // Find subrace variants (add to index)
+        findRaceVariants();
 
         variantIndex = new HashMap<>();
 
